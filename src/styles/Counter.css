@@ -1,0 +1,27 @@
+.wrapper {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--bgColor2);
+    margin: 20px;
+    padding: 30px;
+    border: 2px solid var(--accentColor);
+    border-radius: 15px;
+}
+
+.counterParts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    margin: 0px 10px;
+    border-radius: 8px;
+}
+
+@media (max-width: 500px) {
+    .wrapper {
+      flex-direction: column;
+    }
+    .counterParts {
+        margin: 10px 0px;
+    }
+  }
