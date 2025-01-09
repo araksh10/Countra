@@ -1,22 +1,31 @@
 import React from 'react';
 import '../styles/Counter.css';
-import { useSelector } from 'react-redux';
-// import { increment, decrement } from '../redux/counter/actions';
+import { useDispatch, useSelector } from 'react-redux';
+import { increment, decrement } from '../redux/counter/actions';
 
 const HooksCounter = ({ id }) => {
     const count = useSelector((state) => state.value);
-  return (
+    const dispatch = useDispatch();
+    
+    const incrementHandler = (value) => {
+        dispatch(increment(value));
+    }
+
+    const decrementHandler = (value) => {
+        dispatch(decrement(value));
+    }
+
+    return (
     <div className='wrapper'>
-      {/* increment, decrement, result */}
-      {/* <button className='counterParts' id="addition" onClick={ increment }>
+      <button className='counterParts' id="addition" onClick={ () =>  incrementHandler(7) }>
         Add+
-      </button> */}
+      </button>
       <span className='counterParts' id="result">
         {count} - {id}
       </span>
-      {/* <button className='counterParts' id="subtraction" onClick={ decrement }>
+      <button className='counterParts' id="subtraction" onClick={ () => decrementHandler(7) }>
         Subtract-
-      </button> */}
+      </button>
     </div>
   )
 }
