@@ -1,0 +1,9 @@
+.DWrapper {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--bgColor3);
+    margin: 20px;
+    padding: 30px;
+    border: 2px solid var(--accentColor3);
+    border-radius: 15px;
+}

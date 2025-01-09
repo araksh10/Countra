@@ -3,27 +3,27 @@ import '../styles/Counter.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { increment, decrement } from '../redux/counter/actions';
 
-const HooksCounter = ({ id }) => {
-    const count = useSelector((state) => state.value);
+const HooksCounter = () => {
+    const count = useSelector((state) => state.counter.value);
     const dispatch = useDispatch();
     
-    const incrementHandler = (value) => {
-        dispatch(increment(value));
+    const incrementHandler = () => {
+        dispatch(increment());
     }
 
-    const decrementHandler = (value) => {
-        dispatch(decrement(value));
+    const decrementHandler = () => {
+        dispatch(decrement());
     }
 
     return (
     <div className='wrapper'>
-      <button className='counterParts' id="addition" onClick={ () =>  incrementHandler(7) }>
+      <button className='counterParts' id="addition" onClick={ incrementHandler }>
         Add+
       </button>
       <span className='counterParts' id="result">
-        {count} - {id}
+        {count}
       </span>
-      <button className='counterParts' id="subtraction" onClick={ () => decrementHandler(7) }>
+      <button className='counterParts' id="subtraction" onClick={ decrementHandler }>
         Subtract-
       </button>
     </div>

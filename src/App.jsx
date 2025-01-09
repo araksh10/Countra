@@ -3,6 +3,7 @@ import './App.css';
 import { Provider } from 'react-redux';
 import Store from './redux/store';
 import HooksCounter from './component/HooksCounter';
+import DynamicHooksCounter from './component/DynamicHooksCounter';
 
 function App() {
 
@@ -22,9 +23,8 @@ function App() {
         </div>
       </div>
       <div className="mainBody">
-        <HooksCounter id={1}/>
-        <HooksCounter id={2}/>
-        <HooksCounter id={3}/>
+        < HooksCounter />
+        < DynamicHooksCounter />
       </div>
     </Provider>
   )
